@@ -32,25 +32,30 @@ int main()
     Mhz = mhz(0);              /* Estimate the clock frequency */
     
     /* Shown in the text */
-    printf("Clock frequency is approx. %.1f MHz\n", Mhz);
-    printf("Memory mountain (MB/sec)\n");
+    //printf("Clock frequency is approx. %.1f MHz\n", Mhz);
+    //printf("Memory mountain (MB/sec)\n");
     
-    printf("\t");
+    //printf("\t");
     for (stride = 1; stride <= MAXSTRIDE; stride++)
-        printf("s%d\t", stride);
-    printf("\n");
+      ;
+      //printf("s%d\t", stride);
+    //printf("\n");
     
     for (size = MAXBYTES; size >= MINBYTES; size >>= 1) {
         if (size > (1 << 20))
-            printf("%dm\t", size / (1 << 20));
+	  ;
+	  //printf("%dm\t", size / (1 << 20));
         else
-            printf("%dk\t", size / 1024);
+	  ;
+	  //printf("%dk\t", size / 1024);
 
         for (stride = 1; stride <= MAXSTRIDE; stride++) {
-            printf("%.1f\t", run(size, stride, Mhz));
+	  //printf("%.1f\t", run(size, stride, Mhz));
+	  double throughput = run(size, stride, Mhz);
+	  printf("%d %d %.1f\n", size, stride, throughput);
             
         }
-        printf("\n");
+        //printf("\n");
     }
     exit(0);
 }
