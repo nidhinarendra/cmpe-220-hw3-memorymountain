@@ -3,6 +3,8 @@
 # note that this script is written for python2, but it should be
 # straightforward to port it to python3
 
+# taken from github project 
+
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib as mpl
 import matplotlib.pyplot as plt
